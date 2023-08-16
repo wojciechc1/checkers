@@ -1,0 +1,21 @@
+html{
+    font-size: 16px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: repeating-conic-gradient(
+        from 45deg,
+        #464646 0deg 90deg,
+        #444444 90deg 180deg);
+    background-size: 10rem 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}

@@ -1,0 +1,84 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: repeating-conic-gradient(from 45deg, #464646 0deg 90deg, #444444 90deg 180deg);
+  background-size: 10rem 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 70px);
+  grid-template-rows: repeat(8, 70px);
+  width: -moz-fit-content;
+  width: fit-content;
+  box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.5);
+}
+.board .area {
+  background-color: rgb(43, 43, 43);
+}
+.board .white {
+  background-color: rgb(255, 249, 196);
+  box-shadow: inset 0px 0px 5px 0px rgb(0, 0, 0);
+}
+
+.pawn-white, .pawn-black {
+  position: relative;
+}
+.pawn-white::before, .pawn-black::before {
+  content: "";
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.pawn-white::after, .pawn-black::after {
+  content: "";
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border-radius: 50%;
+}
+
+.pawn-white {
+  position: relative;
+}
+.pawn-white::before {
+  outline: 5px hsl(0, 0%, 55%) solid;
+  border: 5px hsl(0, 0%, 65%) solid;
+  background-color: hsl(0, 0%, 75%);
+}
+
+.pawn-black::before {
+  outline: 5px hsl(0, 0%, 25%) solid;
+  border: 5px hsl(0, 0%, 35%) solid;
+  background-color: hsl(0, 0%, 45%);
+}
+
+.og-pawn::after {
+  -webkit-mask-image: url("../../images/crown-front.svg");
+          mask-image: url("../../images/crown-front.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 35%;
+          mask-size: 35%;
+  -webkit-mask-position: 50% 50%;
+          mask-position: 50% 50%;
+  background: rgb(192, 125, 0);
+}
